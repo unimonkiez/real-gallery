@@ -1,40 +1,43 @@
 {
-    "name": "real-gallery",
-    "version": "0.0.3",
-    "title": "Real gallery",
-    "appPath": "app",
-    "description": "A gallery for your HTML5 project, great integration for Desktop and mobile",
-    "keywords": [
-        "image",
-        "video",
-        "gallery"
-    ],
-    "homepage": "https://github.com/yuvalsaraf/real-gallery.git",
-    "author": {
-        "name": "Yuval Saraf"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/yuvalsaraf/real-gallery.git.git"
-    },
-    "bugs": "https://github.com/yuvalsaraf/real-gallery.git/issues",
-    "dependencies": {
-        "jquery": ">=2.1.1"
-    },
-    "main": [
-        "css/real-gallery",
-        "img/sprites.gif",
-        "js/real-gallery"
-    ],
-    "ignore": [
-        "/*.*",
-        "**/.*",
-        "node_modules",
-        "app/bower_components",
-        "app/index.html"
-    ],
-    "authors": [
-        "Yuval Saraf yuvalsaraf@gmail.com"
-    ],
-    "license": "MIT"
+  "name": "real-gallery",
+  "version": "0.0.4",
+  "title": "Real gallery",
+  "appPath": "app",
+  "description": "A gallery for your HTML5 project, great integration for Desktop and mobile",
+  "keywords": [
+    "image",
+    "video",
+    "gallery"
+  ],
+  "homepage": "https://github.com/yuvalsaraf/real-gallery.git",
+  "author": {
+    "name": "Yuval Saraf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuvalsaraf/real-gallery.git.git"
+  },
+  "bugs": "https://github.com/yuvalsaraf/real-gallery.git/issues",
+  "dependencies": {
+    "jquery": ">=2.1.1"
+  },
+  "main": [
+    "css/real-gallery",
+    "img/sprites.gif",
+    "js/real-gallery"
+  ],
+  "ignore": [
+    "/*.*",
+    "**/.*",
+    "node_modules",
+    "app/bower_components",
+    "app/index.html",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "authors": [
+    "Yuval Saraf yuvalsaraf@gmail.com"
+  ],
+  "license": "MIT"
 }
