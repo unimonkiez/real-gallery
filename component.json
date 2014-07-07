@@ -1,0 +1,12 @@
+{
+    "name": "real-gallery",
+    "version": "0.0.1",
+    "main": [
+        "app/css/real-gallery",
+        "app/img/sprites.gif",
+        "app/js/real-gallery"
+    ],
+    "dependencies": {
+        "jquery": ">=2.1.1"
+    }
+}
