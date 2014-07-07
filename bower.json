@@ -22,18 +22,17 @@
         "jquery": ">=2.1.1"
     },
     "main": [
-        "app/css/real-gallery",
-        "app/img/sprites.gif",
-        "app/js/real-gallery"
+        "css/real-gallery",
+        "img/sprites.gif",
+        "js/real-gallery"
     ],
     "ignore": [
         "/*.*",
         "**/.*",
         "node_modules",
-        "bower_components",
+        "app",
         "app/bower_components",
-        "test",
-        "tests"
+        "app/index.html"
     ],
     "authors": [
         "Yuval Saraf <YOUR_MAIL@gmail.com>"
