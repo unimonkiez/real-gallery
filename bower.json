@@ -1,6 +1,6 @@
 {
     "name": "real-gallery",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "title": "Real gallery",
     "appPath": "app",
     "description": "A gallery for your HTML5 project, great integration for Desktop and mobile",
