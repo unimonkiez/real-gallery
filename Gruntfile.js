@@ -56,6 +56,7 @@ module.exports = function(grunt) {
                     open: 'http://localhost:<%= connect.options.port %>/<%= bowerApp.app %>'
                 }
             }
+
         },
         // Automatically inject Bower components into the app
         bowerInstall: {
