@@ -1,3 +1,21 @@
-html, body {
-    background-color:rgb(215, 180, 180);
+real-gallery>slider {
+    position: absolute;
+    display: inline-block;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+real-gallery>slider>images {
+    height: 100%;
+    display: inline-block;
+}
+real-gallery>slider img {
+    width: auto;
+    height: 100%;
+}
+real-gallery:not(.active)>slider {
+    visibility: hidden;
 }
