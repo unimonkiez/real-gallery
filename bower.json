@@ -38,5 +38,8 @@
   "authors": [
     "Yuval Saraf yuvalsaraf@gmail.com"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "velocity": "~0.6.0"
+  }
 }

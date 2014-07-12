@@ -1,3 +1,6 @@
+real-gallery, real-gallery>gallery {
+    display: inline-block;
+}
 real-gallery>slider {
     position: absolute;
     display: inline-block;
@@ -19,30 +22,38 @@ real-gallery>slider slide {
     height: 100%;
     display: inline-block;
 }
+/*real-gallery.animate>slider slides {
+    -webkit-transition: margin-left 0.2s ease-in-out;
+    -moz-transition: margin-left 0.2s ease-in-out;
+    -ms-transition: margin-left 0.2s ease-in-out;
+    -o-transition: margin-left 0.2s ease-in-out;
+    transition: margin-left 0.2s ease-in-out;
+}*/
+
 real-gallery>slider img {
     display: block;
 }
 real-gallery>slider img.maxH {
-	position: relative;
+    position: relative;
     width: auto;
     height: 100%;
     left: 50%;
 }
 real-gallery>slider img.maxW {
-	position: relative;
+    position: relative;
     width: 100%;
     height: auto;
-    top: 50%;    
+    top: 50%;
 }
 real-gallery:not(.active)>slider {
     visibility: hidden;
 }
-real-gallery nav{
-	display: inline-block;
-	position: absolute;
+real-gallery nav {
+    display: inline-block;
+    position: absolute;
 }
 real-gallery back, real-gallery forward, real-gallery exit {
-	position: absolute;
+    position: absolute;
     display: inline-block;
     background-image: url('../img/sprites.png');
     opacity: 0.4;
@@ -81,11 +92,11 @@ real-gallery back, real-gallery forward {
     width: 15px;
     height: 22px;
 }
-real-gallery back{
-	left: 2%;
+real-gallery back {
+    left: 2%;
 }
-real-gallery forward{
-	right: 2%;
+real-gallery forward {
+    right: 2%;
 }
 real-gallery exit {
     width: 26px;

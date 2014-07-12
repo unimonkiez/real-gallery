@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../css/real-gallery.css" />
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/velocity/jquery.velocity.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script type="text/javascript" src="../js/real-gallery.js"></script>
@@ -28,13 +30,15 @@
     <div>
         Some Sprites
     </div>
-    <real-gallery>
+    <real-gallery class="keys mouse touch" speed="1000">
         <gallery>
-            <img src="img/Smalluser1.jpg" onclick="this.parentNode.toSlide(0);">
-            <img src="img/Smalluser2.jpg" onclick="this.parentNode.toSlide(1);">
+            <img src="img/Smalluser1.jpg" onclick="this.parentNode.func.slideTo(0);">
+            <img src="img/Smalluser2.jpg" onclick="this.parentNode.func.slideTo(1);">
+            <img src="img/Smalluser2.jpg" onclick="this.parentNode.func.slideTo(1);">
         </gallery>
+
         <slider>
-            <slides>
+            <slides onclick="this.func.toggle();">
                 <slide>
                     <img src="img/user1.jpg">
                 </slide>
@@ -43,12 +47,50 @@
                 </slide>
             </slides>
             <nav>
-                <exit onclick="this.parentNode.toggle();"></exit>
-                <back onclick="this.parentNode.back();"></back>
-                <forward onclick="this.parentNode.forward();"></forward>
+                <exit onclick="this.parentNode.func.turnOff();"></exit>
+                <back onclick="this.parentNode.func.back();"></back>
+                <forward onclick="this.parentNode.func.forward();"></forward>
             </nav>
         </slider>
     </real-gallery>
+<!--     <div></div>
+    <real-gallery class="keys mouse touch" speed="1000">
+        <gallery>
+            <img src="img/Smalluser1.jpg" onclick="console.log('1231');this.parentNode.func.slideTo(0);">
+            <img src="img/Smalluser2.jpg" onclick="this.parentNode.func.slideTo(1);">
+            <img src="img/Smalluser1.jpg" onclick="this.parentNode.func.slideTo(2);">
+            <img src="img/Smalluser1.jpg" onclick="this.parentNode.func.slideTo(3);">
+            <img src="img/Smalluser1.jpg" onclick="this.parentNode.func.slideTo(4);">
+            <img src="img/Smalluser2.jpg" onclick="this.parentNode.func.slideTo(5);">
+        </gallery>
+        <slider>
+            <slides onclick="this.func.toggle();">
+                <slide>
+                    <img src="img/user1.jpg">
+                </slide>
+                <slide>
+                    <img src="img/user2.jpg">
+                </slide>
+                <slide>
+                    <img src="img/user1.jpg">
+                </slide>
+                <slide>
+                    <img src="img/user1.jpg">
+                </slide>
+                <slide>
+                    <img src="img/user1.jpg">
+                </slide>
+                <slide>
+                    <img src="img/user2.jpg">
+                </slide>
+            </slides>
+            <nav>
+                <exit onclick="this.parentNode.func.turnOff();"></exit>
+                <back onclick="this.parentNode.func.back();"></back>
+                <forward onclick="this.parentNode.func.forward();"></forward>
+            </nav>
+        </slider>
+    </real-gallery> -->
 </body>
 
 </html>
