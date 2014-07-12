@@ -18,20 +18,21 @@ real-gallery>slider>slides {
 real-gallery>slider slide {
     height: 100%;
     display: inline-block;
-    text-align: center;
 }
 real-gallery>slider img {
-    display: inline-block;
-    position: relative;
+    display: block;
 }
 real-gallery>slider img.maxH {
+	position: relative;
     width: auto;
     height: 100%;
+    left: 50%;
 }
 real-gallery>slider img.maxW {
+	position: relative;
     width: 100%;
     height: auto;
-    top: 50%;
+    top: 50%;    
 }
 real-gallery:not(.active)>slider {
     visibility: hidden;

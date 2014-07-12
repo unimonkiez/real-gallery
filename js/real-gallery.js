@@ -13,7 +13,8 @@ RealGallery = function() {
         obj.realGalleryElements = document.getElementsByTagName('real-gallery');
         for (var realGalleryElementIndex = obj.realGalleryElements.length - 1; realGalleryElementIndex >= 0; realGalleryElementIndex--) {
             var realGalleryElement = obj.realGalleryElements[realGalleryElementIndex];
-            realGalleryElement.currSlide = 0;
+            realGalleryElement.currSlideIdx = 0;
+            realGalleryElement.currSlide;
             realGalleryElement.toggle = function() {
                 this.classList.toggle('active');
                 var thereIsActive = false;
@@ -36,14 +37,14 @@ RealGallery = function() {
                 }
             }
             realGalleryElement.forward = function() {
-                var newSlide = this.currSlide + 1;
+                var newSlide = this.currSlideIdx + 1;
                 if (newSlide > this.maxSlide) {
                     newSlide = 0;
                 }
                 this.toSlide(newSlide);
             }
             realGalleryElement.back = function() {
-                var newSlide = this.currSlide - 1;
+                var newSlide = this.currSlideIdx - 1;
                 if (newSlide < 0) {
                     newSlide = this.maxSlide;
                 }
@@ -54,18 +55,23 @@ RealGallery = function() {
                     num == null) {
                     num = 0;
                 }
-                this.currSlide = num;
-                this.slides.getElementsByClassName('active')[0].classList.remove('active');
+                this.currSlideIdx = num;
+                if (this.currSlide) {
+                    this.currSlide.classList.remove('active');
+                }
 
-                var newSlide = this.slides.getElementsByTagName('slide')[this.currSlide];
+                var newSlide = this.slides.getElementsByTagName('slide')[this.currSlideIdx];
                 newSlide.classList.add('active');
 
-                this.slides.style.marginLeft = (this.currSlide * 100 * (-1)) + "%";
+                this.slides.style.marginLeft = (this.currSlideIdx * 100 * (-1)) + "%";
 
                 var sliderImg = newSlide.getElementsByTagName('img')[0];
                 sliderImg.onResize();
 
-                this.classList.add('active');
+                if (!this.classList.contains('active')) {
+                    this.classList.add('active');
+                    window.addEventListener('resize', obj.resizeListenFunc, false);
+                }
             }
         }
 
@@ -108,14 +114,16 @@ RealGallery = function() {
             realGalleryElement.toggle();
         }
         var navControls = realGalleryElementSlider.getElementsByTagName('nav')[0];
-        navControls.toggle = function() {
-            realGalleryElement.toggle();
-        }
-        navControls.back = function() {
-            realGalleryElement.back();
-        }
-        navControls.forward = function() {
-            realGalleryElement.forward();
+        if (navControls) {
+            navControls.toggle = function() {
+                realGalleryElement.toggle();
+            }
+            navControls.back = function() {
+                realGalleryElement.back();
+            }
+            navControls.forward = function() {
+                realGalleryElement.forward();
+            }
         }
 
         realGalleryElement.gallery = realGalleryElementGallery;
@@ -142,8 +150,9 @@ RealGallery = function() {
         for (var sliderslideIndex = sliderslides.length - 1; sliderslideIndex >= 0; sliderslideIndex--) {
             var slide = sliderslides[sliderslideIndex];
             slide.style.width = slideWidth;
-            if (sliderslideIndex == realGalleryElement.currSlide) {
+            if (sliderslideIndex == realGalleryElement.currSlideIdx) {
                 slide.classList.add('active');
+                realGalleryElement.currSlide = slide;
             }
 
             var slideImgs = slide.getElementsByTagName('img');
@@ -170,8 +179,11 @@ RealGallery = function() {
         if (slideRatio < sliderImgRatio) {
             sliderImg.classList.toggle('maxW');
             sliderImg.style.marginTop = (-(sliderImg.height / 2)) + 'px';
+            sliderImg.style.marginLeft = '0px';
         } else {
             sliderImg.classList.toggle('maxH');
+            sliderImg.style.marginTop = '0px';
+            sliderImg.style.marginLeft = (-(sliderImg.width / 2)) + 'px';
         }
         if (navControls && slide.classList.contains('active')) {
             navControls.style.width = sliderImg.width + 'px';
@@ -189,20 +201,20 @@ RealGallery = function() {
             if (slideRatio < sliderImgRatio && isClassMaxH) {
                 sliderImg.classList.toggle('maxW');
                 sliderImg.classList.toggle('maxH');
-                navControls.classList.toggle('maxW');
-                navControls.classList.toggle('maxH');
             } else if (slideRatio >= sliderImgRatio && isClassMaxW) {
                 sliderImg.classList.toggle('maxW');
                 sliderImg.classList.toggle('maxH');
-                navControls.classList.toggle('maxW');
-                navControls.classList.toggle('maxH');
             }
             if (sliderImg.classList.contains('maxW')) {
                 sliderImg.style.marginTop = (-(sliderImg.height / 2)) + 'px';
+                sliderImg.style.marginLeft = '0px';
             } else {
                 sliderImg.style.marginTop = '0px';
+                sliderImg.style.marginLeft = (-(sliderImg.width / 2)) + 'px';
             }
+
             if (navControls && slide.classList.contains('active')) {
+
                 navControls.style.width = sliderImg.width + 'px';
                 navControls.style.height = sliderImg.height + 'px';
                 navControls.style.top = sliderImg.offsetTop + 'px';
