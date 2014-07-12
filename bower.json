@@ -1,13 +1,18 @@
 {
   "name": "real-gallery",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "title": "Real gallery",
   "appPath": "app",
   "description": "A gallery for your HTML5 project, great integration for Desktop and mobile",
   "keywords": [
+    "pure",
+    "javascript",
+    "css",
     "image",
     "video",
-    "gallery"
+    "gallery",
+    "mobile",
+    "desktop"
   ],
   "homepage": "https://github.com/yuvalsaraf/real-gallery",
   "author": {
@@ -18,14 +23,9 @@
     "url": "git://github.com/yuvalsaraf/real-gallery.git"
   },
   "bugs": "https://github.com/yuvalsaraf/real-gallery/issues",
-  "dependencies": {
-    "jquery": ">=2.1.1",
-    "real-gallery": "~0.0.2"
-  },
   "main": [
-    "css/real-gallery",
-    "img/sprites.gif",
-    "js/real-gallery"
+    "css/real-gallery.css",
+    "js/real-gallery.js"
   ],
   "ignore": [
     "/*.*",
@@ -36,7 +36,7 @@
     "app/index.html"
   ],
   "authors": [
-    "Yuval Saraf <YOUR_MAIL@gmail.com>"
+    "Yuval Saraf yuvalsaraf@gmail.com"
   ],
   "license": "MIT"
 }

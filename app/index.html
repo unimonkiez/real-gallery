@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="../css/real-gallery.css" />
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <script type="text/javascript" src="../js/real-gallery.js"></script>
@@ -22,24 +21,34 @@
 <body>
     <div>
         Demo application for new bower component!
+        <br>&laquo;
+        <br>&raquo;
+        <br>
     </div>
     <div>
         Some Sprites
     </div>
     <real-gallery>
         <gallery>
-            <img src="img/Smalluser1.jpg" trg="1">
-            <img src="img/Smalluser2.jpg" trg="2">
+            <img src="img/Smalluser1.jpg" onclick="this.parentNode.toSlide(0);">
+            <img src="img/Smalluser2.jpg" onclick="this.parentNode.toSlide(1);">
         </gallery>
-        <slider onclick="this.toggle()">
-            <images>
-                <img src="img/user2.jpg" trg="3">
-                <img src="img/user1.jpg" trg="1">
-                <img src="img/user2.jpg" trg="2">
-                <img src="img/user2.jpg" trg="3">
-            </images>
-            <back></back>
-            <forward></forward>
+        <slider>
+            <slides>
+                <slide>
+                    <img src="img/user1.jpg">
+                </slide>
+                <slide>
+                    <img src="img/user2.jpg">
+                </slide>
+                <!-- <img src="img/user2.jpg" trg="2"> -->
+                <!-- <img src="img/user2.jpg" trg="3"> -->
+            </slides>
+            <nav>
+                <exit onclick="this.parentNode.toggle();"></exit>
+                <back onclick="this.parentNode.back();"></back>
+                <forward onclick="this.parentNode.forward();"></forward>
+            </nav>
         </slider>
     </real-gallery>
 </body>
