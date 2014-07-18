@@ -94,6 +94,7 @@ RealGallery = function() {
 
                 var newSlide = this.slides.getElementsByTagName('slide')[this.currSlideIdx];
                 newSlide.classList.add('active');
+                this.currSlide = newSlide;
                 var nav = this.nav;
 
                 // this.slides.style.marginLeft = (this.currSlideIdx * 100 * (-1)) + "%";

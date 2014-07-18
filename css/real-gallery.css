@@ -52,55 +52,47 @@ real-gallery nav {
     display: inline-block;
     position: absolute;
 }
-real-gallery back, real-gallery forward, real-gallery exit {
+/************************
+Navigation buttons
+*************************/
+
+real-gallery exit, real-gallery forward, real-gallery back {
     position: absolute;
-    display: inline-block;
-    background-image: url('../img/sprites.png');
-    opacity: 0.4;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    -moz-transition: opacity 0.2s ease-in-out;
-    -ms-transition: opacity 0.2s ease-in-out;
-    -o-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 0.4), -1px 0px 0px rgba(0, 0, 0, 0.4), 0px 1px 0px rgba(0, 0, 0, 0.4), 0px -1px 0px rgba(0, 0, 0, 0.4);
+    -webkit-transition: text-shadow 0.2s ease-in-out;
+    -ms-transition: text-shadow 0.2s ease-in-out;
+    transition: text-shadow 0.2s ease-in-out;
 }
-real-gallery back:hover, real-gallery forward:hover, real-gallery exit:hover {
-    opacity: 1;
+real-gallery exit:hover, real-gallery forward:hover, real-gallery back:hover {
+    text-shadow: 1px 0px 0px rgba(0, 0, 0, 1), -1px 0px 0px rgba(0, 0, 0, 1), 0px 1px 0px rgba(0, 0, 0, 1), 0px -1px 0px rgba(0, 0, 0, 1);
 }
-real-gallery forward, real-gallery forward.white {
-    background-position: 30px 0px;
+real-gallery exit:before{
+	content: '×';
 }
-real-gallery forward.black {
-    background-position: 0px 0px;
+real-gallery forward:before{
+	content: '>';
 }
-real-gallery back, real-gallery back.white {
-    background-position: 15px 0px;
-}
-real-gallery back.black {
-    background-position: -15px 0px;
-}
-real-gallery exit, real-gallery exit.white {
-    background-position: 30px 26px;
-}
-real-gallery exit.black {
-    background-position: 0px 26px;
-}
-real-gallery back, real-gallery forward {
-    top: 49%;
-    top: -webkit-calc(50% - 11px);
-    top: -moz-calc(50% - 11px);
-    top: calc(50% - 11px);
-    width: 15px;
-    height: 22px;
-}
-real-gallery back {
-    left: 2%;
-}
-real-gallery forward {
-    right: 2%;
+real-gallery back:before{
+	content: '<';
 }
 real-gallery exit {
-    width: 26px;
-    height: 26px;
-    top: 1%;
-    right: 1%;
+    font-size: 40px;
+    font-family: Arial, sans-serif;
+    color: white;
+    left: 10px;
 }
+real-gallery forward, real-gallery back {
+	font-size: 40px;
+	font-family: cursive;
+	color: white;
+	top: calc(50% - 30px);
+}
+real-gallery forward {
+	right: 15px;
+}
+real-gallery back {
+	left: 15px;
+}
+/************************
+End of Navigation buttons
+*************************/

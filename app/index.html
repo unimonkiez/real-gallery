@@ -22,38 +22,42 @@
 
 <body>
     <div>
-        Demo application for new bower component!
-        <br>&laquo;
-        <br>&raquo;
-        <br>
-    </div>
-    <div>
-        Some Sprites
-    </div>
-    <real-gallery class="keys mouse touch" speed="1000">
-        <gallery>
-            <img src="img/Smalluser1.jpg" onclick="this.parentNode.func.slideTo(0);">
-            <img src="img/Smalluser2.jpg" onclick="this.parentNode.func.slideTo(1);">
-            <img src="img/Smalluser2.jpg" onclick="this.parentNode.func.slideTo(1);">
-        </gallery>
+        <div>
+            Demo application for new bower component!
+            <br>&gt;>
+            <br>&raquo;
+            <br>
+        </div>
+        <div>
+            Some Sprites
+        </div>
+        <real-gallery class="keys mouse touch" speed="1000">
+            <gallery>
+                <img src="img/Smalluser1.jpg" onclick="this.parentNode.func.slideTo(0);">
+                <img src="img/Smalluser2.jpg" onclick="this.parentNode.func.slideTo(1);">
+                <img src="img/Smalluser2.jpg" onclick="this.parentNode.func.slideTo(2);">
+            </gallery>
 
-        <slider>
-            <slides onclick="this.func.toggle();">
-                <slide>
-                    <img src="img/user1.jpg">
-                </slide>
-                <slide>
-                    <img src="img/user2.jpg">
-                </slide>
-            </slides>
-            <nav>
-                <exit onclick="this.parentNode.func.turnOff();"></exit>
-                <back onclick="this.parentNode.func.back();"></back>
-                <forward onclick="this.parentNode.func.forward();"></forward>
-            </nav>
-        </slider>
-    </real-gallery>
-<!--     <div></div>
+            <slider>
+                <slides onclick="this.func.toggle();">
+                    <slide>
+                        <img src="img/user1.jpg">
+                    </slide>
+                    <slide>
+                        <img src="img/user2.jpg">
+                    </slide>
+                    <slide>
+                        <img src="img/Smalluser2.jpg">
+                    </slide>
+                </slides>
+                <nav>
+                    <exit onclick="this.parentNode.func.turnOff();"></exit>
+                    <back onclick="this.parentNode.func.back();"></back>
+                    <forward onclick="this.parentNode.func.forward();"></forward>
+                </nav>
+            </slider>
+        </real-gallery>
+        <!--     <div></div>
     <real-gallery class="keys mouse touch" speed="1000">
         <gallery>
             <img src="img/Smalluser1.jpg" onclick="console.log('1231');this.parentNode.func.slideTo(0);">
