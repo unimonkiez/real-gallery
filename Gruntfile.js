@@ -30,6 +30,12 @@ module.exports = function(grunt) {
                     livereload: true
                 }
             },
+            app: {
+                files: ['app/{,*/}*.*'],
+                options: {
+                    livereload: true
+                }
+            },
             gruntfile: {
                 files: ['Gruntfile.js']
             },
